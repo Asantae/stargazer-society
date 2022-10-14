@@ -1,18 +1,21 @@
 const express = require('express');
 const app = express();
+const path = require("path")
 const bodyParser = require('body-parser');
-const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-
 
 //Use .env file in config folder
 const env = require('dotenv').config( {path: "./config/.env"} );
 
-//Connect to database
-connectDB();
-
 app.set("views" + __dirname + "views");
-app.set('view engine', 'ejs');
+app.set('view engine', "ejs")
+app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.json())
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(path.join(__dirname, '/views')))
+
 app.use("/", mainRoutes)
+
+//server is running
+app.listen(process.env.PORT, () => {
+    console.log(`listening on port ${process.env.PORT}`)
+})
