@@ -16,7 +16,7 @@ navToggle.addEventListener("click", () => {
 
 const backgroundPic = document.querySelector(".home")
 async function getPic(){
-    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=V7236xv4KIQydko2rPe3HSgQZLod7CNVCbMxi9Ur`);
+    let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key={}`);
     let data = await response.json();
     console.log(data);
     backgroundPic.style.backgroundImage = `url(${data.hdurl})`;
