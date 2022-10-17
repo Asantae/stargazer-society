@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const homeController = require("../controllers/home");
+const mainController = require("../controllers/main");
+//const { authAPI } = require("../middleware/auth");
 
-router.get("/", homeController.getIndex);
+router.get("/", mainController.getIndex);
+router.get("/APOD", mainController.getApod);
+router.post("/api", mainController.getKey);
 
 module.exports = router;

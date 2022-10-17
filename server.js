@@ -6,7 +6,6 @@ const mainRoutes = require("./routes/main");
 //Use .env file in config folder
 const env = require('dotenv').config( {path: "./config/.env"} );
 
-app.set(__dirname + "views");
 app.set('view engine', "ejs")
 app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public'))
