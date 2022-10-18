@@ -19,6 +19,7 @@ async function getPic(){
     let POD = document.querySelector(".APOD")
     let title = document.querySelector(".apititle")
     let body = document.querySelector(".apibody")
+    let author = document.querySelector(".apiauthor")
     let key = await fetch('/api', {
         method: 'POST',
         headers: {
@@ -31,6 +32,10 @@ async function getPic(){
     POD.src = `${data.hdurl}`;
     title.innerHTML = data.title;
     body.innerHTML = data.explanation;
+    if (data.copyright){
+        author.innerHTML = 'by ' + data.copyright
+    }
+    
 }
 
 //controls destination page and what content is shown

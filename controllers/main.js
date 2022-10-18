@@ -11,7 +11,6 @@ module.exports = {
     },
     getKey: (req, res) => {
         let key = process.env.NASA_API_KEY
-        console.log(key)
         res.json(key)
     }
 };
