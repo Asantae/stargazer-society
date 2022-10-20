@@ -29,7 +29,7 @@ async function getPic(){
     let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${key}`);
     let data = await response.json();
     console.log(data);
-    POD.src = `${data.hdurl}`;
+    POD.src = `${data.url}`;
     title.innerHTML = data.title;
     body.innerHTML = data.explanation;
     if (data.copyright){

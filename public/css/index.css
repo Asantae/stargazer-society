@@ -512,6 +512,7 @@ body {
 .grid-container--destination > img {
     grid-area: image;
     max-width: 75%;
+    max-height: 80%;
 }
 
 .grid-container--destination > .tab-list {

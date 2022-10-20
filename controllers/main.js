@@ -10,7 +10,11 @@ module.exports = {
         res.render("apod.ejs");
     },
     getKey: (req, res) => {
-        let key = process.env.NASA_API_KEY
-        res.json(key)
+        let key = process.env.NASA_API_KEY;
+        res.json(key);
+    },
+    getMedia: (req, res) => {
+        
+        res.render("media.ejs");
     }
 };
