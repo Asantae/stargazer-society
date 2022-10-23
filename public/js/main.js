@@ -28,7 +28,6 @@ async function getPic(){
     }).then((res) => res.json())
     let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${key}`);
     let data = await response.json();
-    console.log(data);
     POD.src = `${data.url}`;
     title.innerHTML = data.title;
     body.innerHTML = data.explanation;
@@ -38,46 +37,18 @@ async function getPic(){
     
 }
 
-//controls destination page and what content is shown
-const mainContentArray = document.querySelectorAll("#main");
-const moonButton = document.querySelectorAll(".moon-button");
-const marsButton = document.querySelectorAll(".mars-button");
-const europaButton = document.querySelectorAll(".europa-button");
-const titanButton = document.querySelectorAll(".titan-button");
+let searchItem = document.querySelector("#search-query")
 
-moonButton.forEach(x => x.addEventListener('click', () => {
-    mainContentArray[0].style = 'display: auto;'
-    mainContentArray[1].style = 'display: none;'
-    mainContentArray[2].style = 'display: none;'
-    mainContentArray[3].style = 'display: none;'
-}))
+searchItem.addEventListener('input', () => {
+    console.log(searchItem.value)
+})
 
-for(let i = 0; i < 0; i++){
-    marsButton[i].addEventListener('click', () => {
-        mainContentArray[0].style = 'display: none;'
-        mainContentArray[1].style = 'display: auto;'
-        mainContentArray[2].style = 'display: none;'
-        mainContentArray[3].style = 'display: none;'
-    })
-}
+//gets metadata about searched items
+async function getQuery(searchItem){
+    let response = await fetch(`https://images-api.nasa.gov/search?q=${searchItem}`);
+    let data = await response.json();
+    console.log(data);
 
-europaButton.forEach(x => x.addEventListener('click', () => {
-    mainContentArray[0].style = 'display: none;'
-    mainContentArray[1].style = 'display: none;'
-    mainContentArray[2].style = 'display: auto;'
-    mainContentArray[3].style = 'display: none;'
-}))
-
-titanButton.forEach(x => x.addEventListener('click', () => {
-    mainContentArray[0].style = 'display: none;'
-    mainContentArray[1].style = 'display: none;'
-    mainContentArray[2].style = 'display: none;'
-    mainContentArray[3].style = 'display: auto;'
-}))
-
-
-for(let i = 1; i < mainContentArray.length; i++){
-    mainContentArray[i].style = 'display: none;'
 }
 
 window.onload = getPic()

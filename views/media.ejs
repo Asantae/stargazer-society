@@ -1,7 +1,39 @@
-<%- include('partials/header') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"rel="stylesheet">
 
-<main id="main" class="grid-container grid-container--home">
-    <input id="search-query">
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/index.css">
+  
+  <title></title>
+</head>
+<script defer src="js/main.js">window.onload = getPic();</script>
+<body class="destination">
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <header class="primary-header flex">
+    <div>
+      <img src="/assets/shared/logo.svg" alt="space tourism logo" class="logo">
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+    <nav>   
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="/"><span aria-hidden="true">00</span>Home</a>
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="APOD"><span aria-hidden="true">01</span>APOD</a>
+            <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="Media"><span aria-hidden="true">02</span>Media</a>
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology.html"><span aria-hidden="true">03</span>Technology</a>
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology.html"><span aria-hidden="true">04</span>NASA</a>
+        </ul>
+        <input id="search-query">
+    </nav>
+  </header>
+
+<main id="main" class="grid-container grid-container--destination flow">
+    
 </main>
 
 
