@@ -593,3 +593,17 @@ body {
 #apibody{
     margin-top: 0;
 }
+
+#query-images-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.query-images {
+    margin: 1px;
+    min-width: 30vw;
+    max-width: 33vw;
+}
