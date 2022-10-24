@@ -1,4 +1,5 @@
 
+let background = document.querySelector(".destination")
 let searchItem = document.querySelector("#search-query");
 let main = document.querySelector("#main");
 let imgDiv = document.querySelector("#query-images-container")
@@ -14,39 +15,23 @@ async function getQuery(searchItem){
         createElement(data.collection.items);
     }
 
-
 }
 
 function createElement(arr){
     deleteElement();
+    background.style.background = 'repeat-y'
+    background.style.backgroundSize = 'auto'
     for(let i = 0; i < arr.length; i++){
-        if(arr[i].data[0].media_type === 'video'){
-            console.log(arr[i]);
-            let imgElement = document.createElement('video');
-            let videoSource = document.createElement('source');
-            let imageSource = document.createElement('source');
-            imgElement.appendChild(videoSource)
-            imgElement.appendChild(imageSource)
-            imgElement.classList.add('query-box');
-            imgElement.classList.add('query-images');
-            
-            //const elementChildSpan = document.createElement('span')
-            //elementChildSpan.classList.add('query-title')
-            //element.appendChild(elementChildSpan)
-            imageSource.src = arr[i].links[0].href;
-            videoSource.src = arr[i].links[1].href;
-            imgDiv.appendChild(imgElement);
-        } else {
-           let imgElement = document.createElement('img'); 
-           imgElement.classList.add('query-box');
-           imgElement.classList.add('query-images');
-           
-           //const elementChildSpan = document.createElement('span')
-           //elementChildSpan.classList.add('query-title')
-           //element.appendChild(elementChildSpan)
-           imgElement.src = arr[i].links[0].href;
-           imgDiv.appendChild(imgElement);
-        }
+        let imgElement = document.createElement('img');
+        imgElement.classList.add('query-images');
+        console.log(arr[i].data[0])
+        imgElement.alt = arr[i].data[0].title
+        //const elementChildSpan = document.createElement('span')
+        //elementChildSpan.classList.add('query-title')
+        //element.appendChild(elementChildSpan)
+        imgElement.src = arr[i].links[0].href;
+        imgElement.style.marginTop = '10px'
+        imgDiv.appendChild(imgElement);
     }
 
 }

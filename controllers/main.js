@@ -16,5 +16,22 @@ module.exports = {
     getMedia: (req, res) => {
         
         res.render("media.ejs");
-    }
+    },
+    getMoon: (req, res) => {
+        
+        res.render("moon.ejs");
+    },
+    getTitan: (req, res) => {
+        
+        res.render("titan.ejs");
+    },
+    getMars: (req, res) => {
+        
+        res.render("Mars.ejs");
+    },    
+    getEuropa: (req, res) => {
+        
+        res.render("europa.ejs");
+    },
+    
 };
