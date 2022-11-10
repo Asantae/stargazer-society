@@ -3,6 +3,10 @@ let background = document.querySelector(".destination")
 let searchItem = document.querySelector("#search-query");
 let main = document.querySelector("#main");
 let imgDiv = document.querySelector("#query-images-container")
+
+let header = document.querySelector(".primary-header")
+
+
 searchItem.addEventListener('input', () => {
     getQuery(searchItem.value);
 })
@@ -19,12 +23,10 @@ async function getQuery(searchItem){
 
 function createElement(arr){
     deleteElement();
-    background.style.background = 'repeat-y'
     background.style.backgroundSize = 'auto'
     for(let i = 0; i < arr.length; i++){
         let imgElement = document.createElement('img');
         imgElement.classList.add('query-images');
-        console.log(arr[i].data[0])
         imgElement.alt = arr[i].data[0].title
         //const elementChildSpan = document.createElement('span')
         //elementChildSpan.classList.add('query-title')

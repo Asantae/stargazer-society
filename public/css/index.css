@@ -555,7 +555,6 @@ body {
     
     .grid-container--home {
         padding-bottom: max(6rem, 20vh);
-        align-items: end;
     }
     
     .grid-container--home > *:first-child {
@@ -590,6 +589,7 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
+    position: fixed;
 }
 
 #search-query {
@@ -606,6 +606,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    padding-top: 75px;
 }
 
 
